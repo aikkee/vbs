@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link rel='stylesheet' href='{{ url_for('static', filename='css/bookings.css') }}' />
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="testbox">
+  <div style="font-family: 'Acme'; font-size: 24px; text-align: center;"><br/>IPPT Med Screening</div>
+  <form id="htmbForm" action="/save" method="POST" name="booking">
+    <hr>
+		{% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+		{{ form.hidden_tag() }}
+		<label id="icon" for="name"><i class="icon-map-marker icon-large"></i></label>
+		{{ form.location(id="location_select") }}
+		<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="addressText"></span><span id="female" style="display:none;">&nbsp;&nbsp;(<i class="icon-female icon-large"></i> doctor)</span></div>
+		<label id="icon" for="name"><i class="icon-calendar"></i></label>
+		{{ form.date_time(id="slot_select") }}
+		<input type="hidden" id="actionType" name="actionType" value="book"/>
+		{% if isnew == 'no' %}
+		<a href="#" class="button" onclick="document.getElementById('actionType').value='change';document.getElementById('htmbForm').submit();">Change</a>
+		{% else %}
+		<a href="#" class="button" onclick="document.getElementById('htmbForm').submit();">Book</a>
+		{% endif %}
+
+  </form>
+</div>
+
+<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='bookings.js') }}"></script>
+</body></html>
+
