@@ -175,7 +175,7 @@ def get_gcal_url(location, dt_str):
     end_dt = start_dt + timedelta(hours=2)
     start_dt_str = start_dt.strftime("%Y%m%dT%H%M00")
     end_dt_str = end_dt.strftime("%Y%m%dT%H%M00")
-    t = f"http://www.google.com/calendar/event?action=TEMPLATE&" \
+    t = "http://www.google.com/calendar/event?action=TEMPLATE&" \
         "dates="+ start_dt_str +"/" + end_dt_str + "&ctz=Asia/Singapore&" \
         "text=Pre-IPPT%20Medical%20Screening&location=" + addrLookup[location] + "&" \
         "details=Please%20proceed%20to%20level%202"
