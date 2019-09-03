@@ -179,9 +179,9 @@ def get_gcal_url(location, dt_str):
         "dates="+ start_dt_str +"/" + end_dt_str + "&ctz=Asia/Singapore&" \
         "text=Pre-IPPT%20Medical%20Screening&location=" + addrLookup[location] + "&" \
         "details=You%20need%20to%20fast%20for%20eight%20hours%20before%20your%20appointment%20at%20Parkway%20Shenton%20clinic." \
-        "%20%20Otherwise%20you%20will%20not%20be%20allowed%20to%20be%20screened.%0APlease%20bring%20your%20FY20%20notification" \
+        "%20%20Otherwise%20you%20will%20not%20be%20allowed%20to%20be%20screened.%0A%0APlease%20bring%20your%20FY20%20notification" \
         "%20letter%20/%20medical%20screening%20form%20and%20your%20NRIC%20to%20the%20clinic%20on%20the%20day%20of%20your" \
-        "%20appointment%20for%20identification%20purpose.%20%0APlease%20bring%20along%20your%20existing%20HTMB%20slips" \
+        "%20appointment%20for%20identification%20purpose.%20%0A%0APlease%20bring%20along%20your%20existing%20HTMB%20slips" \
         "%20and/or%20any%20other%20specialist%20memos.%20The%20doctors%20at%20Parkway%20Shenton%20need%20the%20HTMB%20results" \
         "%20/%20specialist%20memos%20to%20provide%20an%20accurate%20certification."
     return t 
