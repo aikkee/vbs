@@ -166,8 +166,9 @@ def get_gcal_url(location, dt_str):
         "Serangoon":"Blk%20263%20Serangoon%20Central%20Dr%20%2301-59%20S%28550263%29",
         "Shenton Way":"50%20Robinson%20Road%20%2301-03%20Robinson%20Suites%20S%28068882%29",
         "Tanjong Pagar":"10%20Anson%20Road%20%2336-01%20International%20Plaza%20S%28079903%29",
+        "Toa Payoh":"Blk%20126%Lorong%201%20Toa%20Payoh%20%2301-561%20S310126",
         "Woodlands":"30%20Woodlands%20Ave%202%20%2301-47%2F48%2F49%20Woodlands%20MRT%20Station%20S%28738343%29",
-        "Sentosa (RWS)":"26%20Sentosa%20Gateway%20%23B2-01",
+        "Sentosa (RWS)":"26%20Sentosa%20Gateway%20%23B2-01%20Resort%20World%20At%20Sentosa%20S098138",
         "SCDF HQ":"91%20Ubi%20Ave%204%20S%28408827%29",
         "CDA":"101%20Jalan%20Bahar%20S%28649734%29"}
 

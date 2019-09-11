@@ -27,6 +27,7 @@ $(function() {
     "Serangoon":"Blk 263 Serangoon Central Dr",
     "Shenton Way":"50 Robinson Road",
     "Tanjong Pagar":"10 Anson Road",
+    "Toa Payoh":"Blk 126 Lorong 1",
     "Woodlands":"Woodlands MRT",
     "Sentosa (RWS)":"26 Sentosa Gateway (#B2-01)",
     "SCDF HQ":"91 Ubi Ave 4 S(408827)",
@@ -34,27 +35,29 @@ $(function() {
     "HTA":"501 Old Choa Chu Kang Rd S(698928)"}
   
   var ladyDoc = {
+    "Alexandra Road": "No",
+    "Boon Lay": "Yes",
+    "Buangkok": "Yes",
+    "Bukit Panjang":"No",
+    "Changi Business Park":"No",
+    "Clementi": "No",
     "Esplanade":"Yes",
+    "Harbourfront": "Yes",
+    "Kovan": "No",
     "Marina Bay":"Yes",
     "Orchard":"Yes",
-    "Raffles (ACB)": "Yes",
-    "Raffles (ORQ)": "No",
-    "Raffles (PAC)": "Yes",
-    "Shenton Way": "No",
-    "Tanjong Pagar": "Yes",
-    "Alexandra Road": "No",
-    "Harbourfront": "Yes",
-    "Woodlands": "No",
-    "Buangkok": "Yes",
-    "Kovan": "No",
-    "Punggol": "No",
-    "Serangoon": "No",
-    "Changi Business Park":"No",
     "Pasir Ris":"Yes",
     "Paya Lebar": "Yes",
-    "Boon Lay": "Yes",
-    "Clementi": "No",
-    "Bukit Panjang":"No"
+    "Punggol": "No",
+    "Raffles (ORQ)": "No",
+    "Raffles (ACB)": "Yes",
+    "Raffles (PAC)": "Yes",
+    "Serangoon": "No",
+    "Shenton Way": "No",
+    "Tanjong Pagar": "Yes",
+    "Toa Payoh":"No",
+    "Woodlands": "No",
+    "Sentosa (RWS)":"No"
   }
   function getAddress(k){
     return addrLookup[k];
