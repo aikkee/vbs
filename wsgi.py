@@ -172,7 +172,10 @@ def get_gcal_url(location, dt_str):
         "SCDF HQ":"91%20Ubi%20Ave%204%20S%28408827%29",
         "CDA":"101%20Jalan%20Bahar%20S%28649734%29"}
 
-    start_dt = datetime.datetime.strptime(dt_str, '%d %b %Y - %I.%M%p')
+    try:
+        start_dt = datetime.datetime.strptime(dt_str, '%d %b %Y - %I.%M%p')
+    except ValueError:
+        start_dt = datetime.datetime.strptime(dt_str, '%d %b %Y - %I%p')
     end_dt = start_dt + timedelta(hours=2)
     start_dt_str = start_dt.strftime("%Y%m%dT%H%M00")
     end_dt_str = end_dt.strftime("%Y%m%dT%H%M00")
