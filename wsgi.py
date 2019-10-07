@@ -8,17 +8,18 @@ from flask import Flask, render_template, redirect, session, url_for, \
                   request, make_response, send_from_directory, abort, flash
 from sqlalchemy import and_
 from datetime import date, timedelta
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, HiddenField, validators
 from flask_sqlalchemy import SQLAlchemy
 
 application = Flask(__name__)
 application.config.from_pyfile('bookings.cfg')
 db = SQLAlchemy(application)
+excel.init_excel(application)
 
 
 # -- Forms --
-class BookingForm(Form):
+class BookingForm(FlaskForm):
     location = SelectField('location')
     date_time = SelectField('date_time')
     rtype = HiddenField('rtype')
@@ -269,14 +270,13 @@ def import_case():
             r = Reference()
             r.resource_type = row['RESOURCE_TYPE']
             r.booking_ref = row['BOOKING_REF']
-            r.expire_on = datetime.datetime.strptime(row['EXPIRE_ON'], \
-                "%Y-%m-%d %H:%M:%S")
+            r.expire_on = datetime.datetime.strptime(str(row['EXPIRE_ON']), "%Y-%m-%d %H:%M:%S")
             return r
-        request.save_book_to_database(field_name='file', session=db.session, \
-                                      tables=[Reference], \
-                                      initializers=([ref_init_func]))
+        request.save_to_database(field_name='file', session=db.session, \
+                                      table=Reference, \
+                                      initializer=(ref_init_func))
         flash('IPPT Medical Screening cases created.')
-        return render_template('acknowledge.html')
+        return render_template('admin_acknowledge.html')
     return render_template('import.html', title='Import IPPT Medical Screening Cases')
 
 @application.route("/admin/import_slot", methods=['GET', 'POST'])
@@ -290,11 +290,11 @@ def import_slot():
             r.capacity = row['CAPACITY']
             r.available = row['CAPACITY']
             return r
-        request.save_book_to_database(field_name='file', session=db.session, \
-                                      tables=[Resource], \
-                                      initializers=([resource_init_func]))
+        request.save_to_database(field_name='file', session=db.session, \
+                                      table=Resource, \
+                                      initializer=(resource_init_func))
         flash('IPPT Medical Screening timeslot created.')
-        return render_template('acknowledge.html')
+        return render_template('admin_acknowledge.html')
     return render_template('import.html', title='Import IPPT Medical Screening Timeslot')
 
 @application.route("/admin/export_booking", methods=['GET'])

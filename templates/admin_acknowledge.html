@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link rel='stylesheet' href='{{ url_for('static', filename='css/bookings.css') }}' />
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="testbox">
+  <div style="font-family: 'Acme'; font-size: 24px; text-align: center;"><br/>IPPT Med Screening</div>
+      <hr>
+		{% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</div>
+
+</body></html>

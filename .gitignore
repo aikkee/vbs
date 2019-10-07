@@ -1,3 +1,4 @@
 # Ignore venv folder
 venv/
 .vscode/
+data/
