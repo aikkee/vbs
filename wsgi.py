@@ -171,8 +171,8 @@ def get_gcal_url(location, dt_str):
         "Woodlands":"30%20Woodlands%20Ave%202%20%2301-47%2F48%2F49%20Woodlands%20MRT%20Station%20S%28738343%29",
         "Sentosa (RWS)":"26%20Sentosa%20Gateway%20%23B2-01%20Resort%20World%20At%20Sentosa%20S%28098138%29",
         "Yishun Ring":"Blk%20598%20Yishun%20Ring%20Road%20Wisteria%20Mall%20%23B1-09%20S%28768698%29",
-        "SCDF HQ":"91%20Ubi%20Ave%204%20S%28408827%29",
-        "CDA":"101%20Jalan%20Bahar%20S%28649734%29"}
+        "SCDF HQ Med Center":"91%20Ubi%20Ave%204%20S%28408827%29",
+        "CDA Med Center":"101%20Jalan%20Bahar%20S%28649734%29"}
 
     try:
         start_dt = datetime.datetime.strptime(dt_str, '%d %b %Y - %I.%M%p')
