@@ -113,9 +113,14 @@ def save():
     b_ref = request.form.get('booking_ref')
     r_id = request.form.get('date_time', type=int)
 
+    # Release booking slot, retrieve booking_ref record 
     reference = Reference.query.filter(Reference.booking_ref==b_ref).first()
-    # Release booking slot
-    if (reference is not None and reference.resource_id is not None):
+    if (reference is None):
+        # error, should not happen, request the user to start from the SMS booking link again
+        flash("An error occurred when processing your booking, please try again using the link in your SMS again.")
+        return render_template('error.html')
+
+    if (reference.resource_id is not None):
         booked_resource = Resource.query.filter(Resource.id==reference.resource_id).first()
         if (booked_resource is not None):
             booked_resource.available = booked_resource.available + 1 
