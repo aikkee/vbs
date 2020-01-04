@@ -115,7 +115,7 @@ def save():
 
     reference = Reference.query.filter(Reference.booking_ref==b_ref).first()
     # Release booking slot
-    if (reference.resource_id is not None):
+    if (reference is not None and reference.resource_id is not None):
         booked_resource = Resource.query.filter(Resource.id==reference.resource_id).first()
         if (booked_resource is not None):
             booked_resource.available = booked_resource.available + 1 
