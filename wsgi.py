@@ -1,7 +1,7 @@
 import os
 import json
 import datetime
-#import flask_excel as excel
+import flask_excel as excel
 import flask_sqlalchemy 
 
 from flask import Flask, render_template, redirect, session, url_for, request, make_response, send_from_directory, abort, flash
@@ -14,7 +14,7 @@ from flask_sqlalchemy import SQLAlchemy
 application = Flask(__name__)
 application.config.from_pyfile('bookings.cfg')
 db = SQLAlchemy(application)
-#excel.init_excel(application)
+excel.init_excel(application)
 
 
 # -- Forms --
