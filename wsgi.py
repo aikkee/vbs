@@ -153,7 +153,7 @@ def save():
 def get_gcal_url(location, dt_str):
     addrLookup = {
         "Alexandra Road":"460%20Alexandra%20Road%20%2302-15%20PSA%20Building%20S%28119963%29",
-        "Boon Lay":"1%20Jurong%20West%20Central%202%20Jurong%20Point%20Shopping%20Centre%20%2301-17E%2FF%2FG/H%20S%28648886%29",
+        "Boon Lay":"1%20Jurong%20West%20Central%202%20Jurong%20Point%20Shopping%20Centre%20%2301-17E%2FF%2FG%2FH%20S%28648886%29",
         "Buangkok":"10%20Sengkang%20Central%20%2301-04%20Buangkok%20MRT%20S%28545061%29",
         "Bukit Panjang":"1%20Jelebu%20Road%20%2303-02%20Bukit%20Panjang%20Plaza%20S%28677743%29",
         "Changi Business Park":"2%20Changi%20Business%20Park%20Ave%201%20%2301-03%20UE%20Biz%20Hub%20East%20S%28486015%29",
@@ -174,7 +174,9 @@ def get_gcal_url(location, dt_str):
         "Tanjong Pagar":"10%20Anson%20Road%20%2336-01%20International%20Plaza%20S%28079903%29",
         "Toa Payoh":"Blk%20126%Lorong%201%20Toa%20Payoh%20%2301-561%20S%28310126%29",
         "Woodlands":"30%20Woodlands%20Ave%202%20%2301-47%2F48%2F49%20Woodlands%20MRT%20Station%20S%28738343%29",
+        "Seletar Mall":"33%20Sengkang%20West%20Ave%20%2301-54%2F55%20The%20Seletar%20Mall%20S%2879765%29",
         "Sentosa (RWS)":"26%20Sentosa%20Gateway%20%23B2-01%20Resort%20World%20At%20Sentosa%20S%28098138%29",
+        "Yishun Central":"Blk%20160%20Yishun%20St%2011%20%2301-200%20S%28760160%29",
         "Yishun Ring":"Blk%20598%20Yishun%20Ring%20Road%20Wisteria%20Mall%20%23B1-09%20S%28768698%29",
         "SCDF HQ Med Center":"91%20Ubi%20Ave%204%20S%28408827%29",
         "CDA Med Center":"101%20Jalan%20Bahar%20S%28649734%29"}
