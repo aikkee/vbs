@@ -4,7 +4,7 @@ import datetime
 #import flask_excel as excel
 import flask_sqlalchemy 
 
-from flask import Flask, render_template, redirect, session, url_for, make_response, send_from_directory, abort, flash
+from flask import Flask, render_template, redirect, session, url_for, request, make_response, send_from_directory, abort, flash
 from sqlalchemy import and_
 from datetime import date, timedelta
 from flask_wtf import FlaskForm
