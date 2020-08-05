@@ -1,7 +1,7 @@
 import os
 import json
 import datetime
-import flask_excel as excel
+#import flask_excel as excel
 import flask_sqlalchemy 
 
 from flask import Flask, render_template, redirect, session, url_for, make_response, send_from_directory, abort, flash
@@ -14,7 +14,7 @@ from flask_sqlalchemy import SQLAlchemy
 application = Flask(__name__)
 application.config.from_pyfile('bookings.cfg')
 db = SQLAlchemy(application)
-excel.init_excel(application)
+#excel.init_excel(application)
 
 
 # -- Forms --
@@ -304,6 +304,7 @@ def import_slot():
         return render_template('admin_acknowledge.html')
     return render_template('import.html', title='Import IPPT Medical Screening Timeslot')
 
+'''
 @application.route("/admin/export_booking", methods=['GET'])
 def doexport():
 
@@ -313,6 +314,7 @@ def doexport():
             Reference.update_on, Resource.location).filter( \
                 Reference.resource_id != None)
     return excel.make_response_from_query_sets(qs, col, "csv")
+'''
 
 @application.errorhandler(404)
 def page_not_found(e):
