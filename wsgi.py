@@ -190,7 +190,7 @@ def get_gcal_url(location, dt_str):
     end_dt_str = end_dt.strftime("%Y%m%dT%H%M00")
     t = "http://www.google.com/calendar/event?action=TEMPLATE&" \
         "dates="+ start_dt_str +"/" + end_dt_str + "&ctz=Asia/Singapore&" \
-        "text=HT%20Flue%20Vaccination%20&location=" + addrLookup[location] + "&" \
+        "text=HT%20Flu%20Vaccination%20&location=" + addrLookup[location] + "&" \
         "details=You%20need%20to%20fast%20for%20eight%20hours%20before%20your%20appointment%20at%20Parkway%20Shenton%20clinic." \
         "%20%20Otherwise%20you%20will%20not%20be%20allowed%20to%20be%20screened.%0A%0APlease%20bring%20your%20FY20%20notification" \
         "%20letter%20/%20medical%20screening%20form%20and%20your%20NRIC%20to%20the%20clinic%20on%20the%20day%20of%20your" \
