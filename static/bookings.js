@@ -28,6 +28,7 @@ $(function() {
     "Shenton Way":"50 Robinson Road",
     "Tanjong Pagar":"10 Anson Road",
     "Toa Payoh":"Blk 126 Lorong 1",
+		"Toh Yi Drive":"Blk 18 Toh Yi Drive",
     "Woodlands":"Woodlands MRT",
     "Seletar Mall":"33 Sengkang West Ave",
     "Sentosa (RWS)":"26 Sentosa Gateway (#B2-01)",
@@ -66,9 +67,6 @@ $(function() {
   function getAddress(k){
     return addrLookup[k];
   }
-  function hasLadyDoc(k){
-    return ladyDoc[k]=="Yes"
-  }
 
   //$("#location_select").change(function() {
   $( document ).on("change", "#location_select", function() {
@@ -102,11 +100,6 @@ $(function() {
     });
     //show address
     $('.addressText').text(getAddress(location_id));
-    if (hasLadyDoc(location_id)) {
-      document.getElementById("female").style.display=""
-    } else {
-      document.getElementById("female").style.display="None"
-    }
 
   });
 })
