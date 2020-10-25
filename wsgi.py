@@ -189,7 +189,7 @@ def get_gcal_url(location, dt_str):
     end_dt_str = end_dt.strftime("%Y%m%dT%H%M00")
     t = "http://www.google.com/calendar/event?action=TEMPLATE&" \
         "dates="+ start_dt_str +"/" + end_dt_str + "&ctz=Asia/Singapore&" \
-        "text=Pre-IPPT%20Medical%20Screening&location=" + addrLookup[location] + "&" \
+        "text=HT%20Flue%20Vaccination%20&location=" + addrLookup[location] + "&" \
         "details=You%20need%20to%20fast%20for%20eight%20hours%20before%20your%20appointment%20at%20Parkway%20Shenton%20clinic." \
         "%20%20Otherwise%20you%20will%20not%20be%20allowed%20to%20be%20screened.%0A%0APlease%20bring%20your%20FY20%20notification" \
         "%20letter%20/%20medical%20screening%20form%20and%20your%20NRIC%20to%20the%20clinic%20on%20the%20day%20of%20your" \
@@ -239,7 +239,7 @@ def isValidReference(booking_ref, rtype):
     if (bRef != None):
         return True
     else:
-        flash('Invalid reference <%s>. Please contact HRSS.' % booking_ref)
+        flash('Invalid reference <%s>. Please contact HRSC.' % booking_ref)
         return False
 
 @application.route('/admin/check_slots')
@@ -282,9 +282,9 @@ def import_case():
         request.save_to_database(field_name='file', session=db.session, \
                                       table=Reference, \
                                       initializer=(ref_init_func))
-        flash('IPPT Medical Screening cases created.')
+        flash('HT Vaccination cases created.')
         return render_template('admin_acknowledge.html')
-    return render_template('import.html', title='Import IPPT Medical Screening Cases')
+    return render_template('import.html', title='Import HT Vaccination Cases')
 
 @application.route("/admin/import_slot", methods=['GET', 'POST'])
 def import_slot():
@@ -300,9 +300,9 @@ def import_slot():
         request.save_to_database(field_name='file', session=db.session, \
                                       table=Resource, \
                                       initializer=(resource_init_func))
-        flash('IPPT Medical Screening timeslot created.')
+        flash('HT Vaccination timeslot created.')
         return render_template('admin_acknowledge.html')
-    return render_template('import.html', title='Import IPPT Medical Screening Timeslot')
+    return render_template('import.html', title='Import HT Vaccination Timeslot')
 
 '''
 @application.route("/admin/export_booking", methods=['GET'])
